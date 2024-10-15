@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Records</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg fixed-top bg-light navbar-light">
+        <div class="container">
+          <a class="navbar-brand" href="#"
+            ><img
+              id="MDB-logo"
+              src="https://mdbcdn.b-cdn.net/wp-content/uploads/2018/06/logo-mdb-jquery-small.png"
+              alt="MDB Logo"
+              draggable="false"
+              height="30"
+          /></a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-mdb-toggle="collapse"
+            data-mdb-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <i class="fas fa-bars"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto align-items-center">
+              <li class="nav-item">
+                <a class="nav-link mx-2" href="#!"><i class="fas fa-plus-circle pe-2"></i>Post</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link mx-2" href="#!"><i class="fas fa-bell pe-2"></i>Alerts</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link mx-2" href="#!"><i class="fas fa-heart pe-2"></i>Trips</a>
+              </li>
+              <li class="nav-item ms-3">
+                <a class="btn btn-black btn-rounded" href="#!">Sign in</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+<!-- a -->
+<table border="1">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Prefix</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Date of Birth</th>
+            <th>Sex</th>
+            <th>Curriculum ID</th>
+            <th>Previous School</th>
+            <th>Address</th>
+            <th>Telephone</th>
+            <th>Email</th>
+            <th>Line ID</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% students.forEach(student => { %>
+        <tr>
+            <td><%= student.id %></td>
+            <td><%= student.prefix_id %></td>
+            <td><%= student.first_name %></td>
+            <td><%= student.last_name %></td>
+            <td><%= student.date_of_birth %></td>
+            <td><%= student.sex %></td>
+            <td><%= student.curriculum_id %></td>
+            <td><%= student.previous_school %></td>
+            <td><%= student.address %></td>
+            <td><%= student.telephone %></td>
+            <td><%= student.email %></td>
+            <td><%= student.line_id %></td>
+            <td><%= student.status %></td>
+        </tr>
+        <% }) %>
+    </tbody>
+</table>
+    <section class="mt-5" style="background-color: #eee;">
+        <div class="container py-5">
+          <div class="row">
+            <div class="col-lg-4 ">
+              <div class="card mb-6 w-100 h-100 d-flex flex-column">
+                <div class="card-body text-center mt-5">
+                    <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp" alt="avatar"
+                    class="rounded-circle img-fluid" style="width: 250px;">
+                    <p class="text-muted mb-4">วิทยาการคอมพิวเตอร์</p> <!-- สาขาวิชา -->                    
+                  <div class="d-flex justify-content-center mb-2">
+                    <button  type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-outline-success">Edit</button>
+                    <form action="/logout" method="GET" class="d-inline">
+                        <button type="submit" class="btn btn-danger btn-lg px-4 mx-2">Logout</button>
+                      </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-8">
+              <div class="card mb-4">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <p class="mb-0">ชื่อ - นามสกุล</p>
+                    </div>
+                    <div class="col-sm-9">
+                      <p class="text-muted mb-0">Johnatan Smith</p> <!--ชื่อ-นามสกุล -->
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <p class="mb-0">รหัสนักศึกษา</p>
+                    </div>
+                    <div class="col-sm-9">
+                      <p class="text-muted mb-0">65502100132-7</p> <!--รหัสนักศึกษา -->
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <p class="mb-0">สาขาวิชา</p>
+                    </div>
+                    <div class="col-sm-9">
+                      <p class="text-muted mb-0">วิทยาการคอมพิวเตอร์</p> <!--สาขาวิชา -->
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <p class="mb-0">Mobile</p>
+                    </div>
+                    <div class="col-sm-9">
+                      <p class="text-muted mb-0">(098) 765-4321</p> <!--เบอร์โทร -->
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <p class="mb-0">E-mail</p>
+                    </div>
+                    <div class="col-sm-9">
+                      <p class="text-muted mb-0">example@gmail.com</p> <!--E-mail -->
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <p class="mb-0">Line</p>
+                    </div>
+                    <div class="col-sm-9">
+                      <p class="text-muted mb-0">waranchai_line</p> <!--E-mail -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="card mb-4 mb-md-0">
+                    <div class="card-body">
+                        <h5 class="mb-4"><span class="text-primary font-italic">ข้อมูลส่วนตัว</span>
+                        </h5>
+                        <hr>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <p class="mb-1">วัน เดือน ปี เกิด</p>
+                              </div>
+                              <div class="col-sm-9">
+                                <p class="text-muted mb-0">Johnatan Smith</p> <!--ชื่อ-นามสกุล -->
+                              </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <p class="mb-1">สัญชาติ</p>
+                              </div>
+                              <div class="col-sm-9">
+                                <p class="text-muted mb-1">ไทย</p> <!--ชื่อ-นามสกุล -->
+                              </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <p class="mb-1">ศาสนา</p>
+                              </div>
+                              <div class="col-sm-9">
+                                <p class="text-muted mb-1">พุทธ</p> <!--ชื่อ-นามสกุล -->
+                              </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <p class="mb-1">ที่อยู่</p>
+                              </div>
+                              <div class="col-sm-9">
+                                <p class="text-muted mb-1">
+                                    1589/217 หมู่ที่ 10
+                                    สำโรงเหนือ
+                                    เขต/อำเภอ เมือง
+                                    สมุทรปราการ 10270 โทร 091-807-9017</p> <!--ชื่อ-นามสกุล -->
+                              </div>
+                        </div>
+                        <hr>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+</body>
+</html>
